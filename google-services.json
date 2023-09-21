@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "857496987108",
+    "project_id": "taugordrive",
+    "storage_bucket": "taugordrive.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857496987108:android:6b974ee8ba5c47bafb93f1",
+        "android_client_info": {
+          "package_name": "com.firebase.taugorDrive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857496987108-g8qtupq9obgt3o3nq2v7uti8b3gfn181.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIzjwn-ZiP6jcGqgy_YMbO4aH71hnhOto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857496987108-g8qtupq9obgt3o3nq2v7uti8b3gfn181.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
