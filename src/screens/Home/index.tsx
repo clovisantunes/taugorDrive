@@ -1,45 +1,74 @@
-import { useNavigation } from '@react-navigation/native';
-import Button from '../../components/UI/Button/Button';
+import { Text } from "../../components/Text/Text";
+import { Octicons } from "@expo/vector-icons";
+import { StackPramsList } from "../../routes/AppRoutes";
+import { RouteProp } from "@react-navigation/native";
 import {
-    Container,
-    HomeContainer,
-    ImageHome,
-    ButtonContainer,
-    TextContainer,
-    TextDescription,
-    TextTitle,
-    ButtonBox
-} from './styles';
+  ButtonBox,
+  ButtonContainer,
+  ButtonSearch,
+  Container,
+  FreeStorageBox,
+  FreeStorageContainer,
+  InputContainer,
+  SearchItem,
+  TextContainer,
+  TextWelcome,
+} from "./styles";
+import ButtonSelect from "../../components/UI/ButtonSelect/ButtonSelect";
+import InputItem from "../../components/UI/Input/Input";
+import Button from "../../components/UI/Button/Button";
 
-export default function Home() {
-    const navigation = useNavigation<any>();
-    return (
-        <Container>
-            <HomeContainer>
-                <ImageHome source={require("../../../assets/images/going_up.jpg")} />
-                <TextContainer>
-                    <TextTitle>Taugor Drive</TextTitle>
-                    <TextDescription>Simple and easy.</TextDescription>
-                </TextContainer>
-                <ButtonContainer>
-                    <ButtonBox>
-                        <Button
-                            buttoncolor='primary'
-                            text="Sign in"
-                            onPress={() => navigation.navigate('SignIn')}
-                            textColor='white'
-                        />
-                    </ButtonBox>
-                    <ButtonBox>
-                        <Button
-                            buttoncolor='secondary'
-                            text="Register"
-                            onPress={() => navigation.navigate('SignUp')}
-                            textColor='white'
-                        />
-                    </ButtonBox>
-                </ButtonContainer>
-            </HomeContainer>
-        </Container>
-    )
+type HomeRouteProp = RouteProp<StackPramsList, "Home">;
+interface Props {
+  route: HomeRouteProp;
+}
+
+export default function Home({ route }: Props) {
+  const userEmail = route.params?.userEmail;
+  return (
+    <Container>
+      <TextContainer>
+        <TextWelcome>
+          <Text color="white" size={32} weight="maximum">
+            Welcome
+          </Text>
+        </TextWelcome>
+        <TextWelcome>
+          <Text color="white" size={24} weight="maximum">
+            {userEmail}
+          </Text>
+        </TextWelcome>
+      </TextContainer>
+      <ButtonContainer>
+        <ButtonBox>
+          <ButtonSelect buttoncolor="primary" onPress={console.log("teste")}>
+            <Octicons name="upload" size={72} color="white" />
+          </ButtonSelect>
+        </ButtonBox>
+        <FreeStorageContainer>
+          <FreeStorageBox>
+            <Text>Free Storage</Text>
+          </FreeStorageBox>
+          <FreeStorageBox>
+            <Text>{"size"}</Text>
+          </FreeStorageBox>
+          <FreeStorageBox>
+            <Text>From total 1Gb</Text>
+          </FreeStorageBox>
+        </FreeStorageContainer>
+        <InputContainer>
+          <SearchItem>
+            <InputItem name="Search" type="text" />
+          </SearchItem>
+          <ButtonSearch>
+            <Button
+              buttoncolor="primary"
+              text="Search"
+              onPress={console.log("pesquisando")}
+            />
+          </ButtonSearch>
+        </InputContainer>
+      </ButtonContainer>
+    </Container>
+  );
 }

@@ -15,7 +15,7 @@ export const handleRegister = async ({ email, password, setError, passwordConfir
         createUserWithEmailAndPassword(auth ,email, password)
             .then(() => {
                 console.log('User account created & signed in!');
-                navigation.navigate('HomeScreen')
+                navigation.navigate('Home')
             })
             .catch(error => {
                 if (error.code === 'auth/email-already-in-use') {

@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added firabase structure
 - Created folders home, signUp and signIn
 - Added styled Components
-- Initiated Home
+- Initiated Welcome page
 - Created Input
 - Created app Routes
 - initiated Sign Page
@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added google SignIn plugin
 - Created SignUp page
 - Created services login/register
+- Initiated Home
 
 ### Fixed
 

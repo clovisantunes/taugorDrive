@@ -36,11 +36,8 @@
       │   │   │                     └──  index.tsx
       │   │   │                     └──  styles.ts
       │   │   └── Component-example/ # Uppercase component name
-      │   │   │                     └── index.tsx # Files with lowercase first letter
-      │   │   │                     └── styles.ts # Styles with lowercase first letter
-      │   │   └── Component-example-two/
-      │   │                         └── index.tsx
-      │   │                         └── styles.ts   
+      │   │                      └── Text.tsx # Files with Uppercase first letter
+      │   │                      └── styles.ts # Styles with lowercase first letter  
       │   ├── contexts/ # Api consumer handlers Ex: User information and authentication validation
       │   │     └── AuthContext.tsx # Files must start with uppercase letters
       │   ├── api/  # Project api

@@ -22,6 +22,7 @@ export const ContainerItems = styled.View`
 export const InputBox = styled.View`
     width: 85%;
     align-items: center;
+    margin-bottom: 4%;
 `
 
 export const BoxText = styled.View`
@@ -36,6 +37,7 @@ export const TextItem = styled.View`
 `
 export const ButtonItem = styled.View`
     width: 50%;
+    height: 45px;
 `
 export const BoxErrorText = styled.View`
     align-items: center;

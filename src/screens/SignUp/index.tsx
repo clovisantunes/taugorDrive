@@ -39,16 +39,24 @@ export default function SignUp() {
             <ContainerItems>
                 <InputBox>
                     <InputItem name="name" type="text" placeholder="Name" onChangeText={setName} value={name} />
+                </InputBox> 
+                <InputBox>   
                     <InputItem name="email" type="text" placeholder="Email" onChangeText={setEmail} value={email}/>
-                    <InputItem name="password" type="text" placeholder="Password" onChangeText={setPassword} value={password}  />
-                    <InputItem name="passwordConfirm" type="text" placeholder="Confirm your Password" onChangeText={setPasswordConfirm} value={passwordConfirm}  />
-                    <Button
-                        buttoncolor="primary"
-                        textColor="white"
-                        text="Sign Up"
-                        onPress={handleRegisterClick}
-                    />
-                </InputBox>
+                </InputBox> 
+                <InputBox>  
+                    <InputItem secureTextEntry name="password" type="text" placeholder="Password" onChangeText={setPassword} value={password}  />
+                </InputBox>    
+                <InputBox>    
+                    <InputItem secureTextEntry name="passwordConfirm" type="text" placeholder="Confirm your Password" onChangeText={setPasswordConfirm} value={passwordConfirm}  />
+                </InputBox>   
+                    <ButtonItem>
+                        <Button
+                            buttoncolor="primary"
+                            textColor="white"
+                            text="Sign Up"
+                            onPress={handleRegisterClick}
+                        />
+                    </ButtonItem>
                 <BoxText>
                     <TextItem>
                         <Text size={16} color="dark" weight="minimum">Have an accout?</Text>

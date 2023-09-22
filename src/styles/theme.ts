@@ -63,7 +63,7 @@ export const theme: Theme = {
     maximum: 800,
   },
   border: {
-    line: 1,
+    line: 4,
     radius: 4,
     color: '#e3e3e3',
   },

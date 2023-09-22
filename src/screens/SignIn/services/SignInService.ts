@@ -17,7 +17,7 @@ export const handleLogin = async ({email, password, setError, navigation}: login
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
             console.log('User account created & signed in!');
-            navigation.navigate('HomeScreen')
+            navigation.navigate('Home', { userEmail: email })
         })
         .catch(error => {
             if (setError) {

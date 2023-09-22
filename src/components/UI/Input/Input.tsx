@@ -2,7 +2,7 @@ import { InputWrapper } from "./styles";
 import { TextInputProps } from 'react-native';
 
 type InputProps = TextInputProps & {
-    placeholder: string;
+    placeholder?: string;
     type:string;
     name: string;
 };

@@ -1,48 +1,48 @@
 import styled from "styled-components/native";
 import { theme } from "../../styles/theme";
 
-export const Container = styled.SafeAreaView`
-  justify-content: center;
-  align-items: center;
-  background-color: ${theme.colors.backgroundWhite};
-
-`;
-export const HomeContainer = styled.View`
-  width: 85%;
-  height: 100%;
-  flex-direction: column;
-  align-items: center;
-`;
+export const Container = styled.View`
+    width: 100%;
+    height: 100%;
+    background-color: ${theme.colors.backgroundBlack};
+`
 export const TextContainer = styled.View`
-  justify-content: center;
+  margin-top: 16%;
   align-items: center;
-  margin: 15px 0 0 0;
-  height: 160px;
-`;
-
-export const TextTitle = styled.Text`
-  position: absolute;
-  top: 0;
-  font-size: ${theme.colors.title.fontSize}px;
-  color: ${theme.colors.title.color};
-`;
-export const TextDescription = styled.Text`
-  font-size: 24px;
-  color: ${theme.colors.dark};
-  font-weight: ${theme.fontWeight.minimum};
-`;
-
+`
+export const TextWelcome = styled.Text`
+  
+`
 export const ButtonContainer = styled.View`
   width: 100%;
-  flex-direction: row;
-  justify-content: space-around;
-`;
-export const ButtonBox = styled.View`
-  width: 100px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
 `
-
-export const ImageHome = styled.Image`
-  width: 120%;
-  height: 60%;
-  object-fit: cover;
-`;
+export const ButtonBox = styled.View`
+  width: 160px;
+  height: 160px;
+  margin-bottom: 8%;
+`
+export const FreeStorageContainer = styled.View`
+  width: 50%;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8%;
+`
+export const FreeStorageBox = styled.View`
+  margin-bottom: 2%;
+`
+export const InputContainer = styled.View`
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+`
+export const SearchItem = styled.View`
+ width: 70%;
+ margin: 0 2% 0 4%;
+`
+export const ButtonSearch = styled.View`
+  width: 20%;
+  height: 45px;
+`
