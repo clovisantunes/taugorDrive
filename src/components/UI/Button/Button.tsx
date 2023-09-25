@@ -3,9 +3,9 @@ import { Wrapper } from "./styles"
 
 
 type ButtonProps = {
-    buttoncolor: "primary" | "secondary" | "backgroundWhite"| "..."
+    buttoncolor: "primary" | "secondary" | "backgroundWhite" | "dark" | "..."
     text?: string;
-    textColor?: 'white'| 'black' | 'primary'| "...";
+    textColor?: 'white'| 'black' | 'primary'|  "...";
     onPress:  any;
     children?: any;
 }

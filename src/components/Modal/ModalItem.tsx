@@ -1,0 +1,85 @@
+import { Text } from '../Text/Text';
+import Button from '../UI/Button/Button';
+import { 
+    Entypo, 
+    Ionicons, 
+    FontAwesome 
+} from '@expo/vector-icons';
+import {
+    ModalView,
+    CloseModalBox,
+    CloseButton,
+    TextDescription,
+    TypeItem
+} from './styles';
+import { getDownloadURL, ref, getStorage } from 'firebase/storage';
+
+type ModalProps = {
+    setModalVisible: boolean;
+    closeModal: any;
+    selectedItem: any;
+}
+
+export default function ModalItem({ setModalVisible, closeModal, selectedItem }: ModalProps) {
+    if (!selectedItem) {
+        return null;
+    }
+
+    const { name, contentType, uploadDate } = selectedItem;
+
+    const contentTypeToIconMap: { [key: string]: JSX.Element } = {
+        'image/': <Entypo name="images" size={40} color="white" />,
+        'video/': <Entypo name="folder-video" size={40} color="white" />,
+        'audio/': <FontAwesome name="file-audio-o" size={40} color="white" />,
+    };
+
+    const getIconForContentType = (contentType: string) => {
+        for (const key in contentTypeToIconMap) {
+            if (contentType.startsWith(key)) {
+                return contentTypeToIconMap[key];
+            }
+        }
+        return <Ionicons name="document" size={40} color="white" />
+    };
+
+    const handleDownload = async () => {
+        try {
+          const storage = getStorage(); 
+          const fileRef = ref(storage, `uploads/${name}`); // Especifica o nome do arquivo no caminho
+      
+          const downloadURL = await getDownloadURL(fileRef);
+      
+          // Inicia o processo de download do arquivo
+          window.open(downloadURL, "_blank");
+        } catch (error) {
+          console.error("Erro ao obter URL de download:", error);
+        }
+      };
+
+    return (
+        <ModalView>
+            <CloseModalBox>
+                <CloseButton>
+                    <Button buttoncolor='dark' onPress={closeModal} textColor='white'>
+                        <Text color='white' size={16} weight='medium'>X</Text>
+                    </Button>
+                </CloseButton>
+            </CloseModalBox>
+                <TextDescription>
+                    <Text color='white' size={16} weight='medium'>Name: {name}</Text>
+                </TextDescription>
+                <TextDescription>
+                    <Text color='white' size={16} weight='medium'>File type: {contentType}</Text>
+                </TextDescription>
+                <TextDescription>    
+                    <Text color='white' size={16} weight='medium'>Upload Date: {uploadDate.toString()}</Text>
+                </TextDescription>
+                <TypeItem>
+                    {getIconForContentType(contentType)}
+                </TypeItem>
+                <Button buttoncolor='primary' onPress={handleDownload}>
+                    <Text color='white' size={16} weight='medium'>Baixar Arquivo</Text>
+                </Button>
+        </ModalView>
+    )
+}

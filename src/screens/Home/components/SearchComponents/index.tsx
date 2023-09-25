@@ -13,10 +13,12 @@ import {
 } from "./styles";
 import { useState } from "react";
 import Modal from "react-native-modal";
+import ModalItem from "../../../../components/Modal/ModalItem";
 
 type SearchProps = {
   id: number;
   name: string;
+  
 };
 
 export default function SearchComponent({ id, name }: SearchProps) {
@@ -72,14 +74,7 @@ export default function SearchComponent({ id, name }: SearchProps) {
       <Modal isVisible={isModalVisible}>
         <ContainerItem>
           {selectedItem && (
-            <ContainerItem>
-              <Text>Name: {selectedItem.name}</Text>
-              <Text>ID: {selectedItem.id}</Text>
-      
-              <Button buttoncolor="secondary"  onPress={closeModal}>
-                <Text>X</Text>
-              </Button>
-            </ContainerItem>
+            <ModalItem setModalVisible={isModalVisible}  closeModal={closeModal} selectedItem={selectedItem}/>
           )}
         </ContainerItem>
       </Modal>
