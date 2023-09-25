@@ -11,28 +11,14 @@ export const TextContainer = styled.View`
   align-items: center;
 `
 export const TextWelcome = styled.Text`
-  
 `
-export const ButtonContainer = styled.View`
+export const ContainerItems = styled.View`
   width: 100%;
   justify-content: center;
   align-items: center;
   margin-top: 10%;
 `
-export const ButtonBox = styled.View`
-  width: 160px;
-  height: 160px;
-  margin-bottom: 8%;
-`
-export const FreeStorageContainer = styled.View`
-  width: 50%;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 8%;
-`
-export const FreeStorageBox = styled.View`
-  margin-bottom: 2%;
-`
+
 export const InputContainer = styled.View`
   width: 100%;
   flex-direction: row;

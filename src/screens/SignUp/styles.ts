@@ -14,33 +14,3 @@ export const ContainerText = styled.View`
 export const TextTitle = styled.View`
     width: 60%;
 `
-export const ContainerItems = styled.View`
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-`
-export const InputBox = styled.View`
-    width: 85%;
-    align-items: center;
-    margin-bottom: 4%;
-`
-
-export const BoxText = styled.View`
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-`
-export const TextItem = styled.View`
-    width: 50%;
-    margin-top: 3%;
-    align-items: flex-end;
-`
-export const ButtonItem = styled.View`
-    width: 50%;
-    height: 45px;
-`
-export const BoxErrorText = styled.View`
-    align-items: center;
-    width: 100%;
-    margin-top: 8%;
-`

@@ -27,6 +27,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created SignUp page
 - Created services login/register
 - Initiated Home
+- Cdded firebase storage
+- Configured upload service and freeStorage
+- Added modal 
 
 ### Fixed
 

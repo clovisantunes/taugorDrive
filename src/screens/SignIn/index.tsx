@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { handleLogin } from "./services/SignInService";
 import { useState } from "react";
 import { Container, ContainerText, TextBox } from "./styles";
-import LoginComponent from "./components/LoginComponent";
+import LoginComponent from "./components/SignInForm";
 
 export default function SignIn() {
   return (

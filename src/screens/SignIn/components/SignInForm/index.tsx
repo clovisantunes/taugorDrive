@@ -2,28 +2,22 @@ import { useState } from "react";
 import { Text } from "../../../../components/Text/Text";
 import Button from "../../../../components/UI/Button/Button";
 import InputItem from "../../../../components/UI/Input/Input";
+import { useNavigation } from "@react-navigation/native";
 import {
-  BoxErrorText,
-  BoxGoogle,
-  BoxLine,
-  BoxText,
   ButtonBox,
-  ButtonItem,
-  ContainerGoogle,
-  ContainerItems,
+  LoginForm,
   ForgoutPass,
   FourgoutPassBox,
   Inputbox,
-  Line,
-  TextItem,
 } from "./styles";
-import { useNavigation } from "@react-navigation/native";
+import AuthenticationMethods from "../../../../components/AuthenticationMethods/AuthenticationMethods";
+import AuthError from "../../../../components/AuthenticationError/AuthError";
 
 export default function LoginComponent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const navigation = useNavigation<any>();
+  const [error, setError] = useState("");
 
   const handleLoginClick = () => {
     /*handleLogin({ email, password, setError, navigation });*/
@@ -31,7 +25,7 @@ export default function LoginComponent() {
   };
 
   return (
-    <ContainerItems>
+    <LoginForm>
       <Inputbox>
         <InputItem
           type="text"
@@ -66,41 +60,8 @@ export default function LoginComponent() {
           onPress={handleLoginClick}
         />
       </ButtonBox>
-      <ContainerGoogle>
-        <Line />
-        <BoxLine>
-          <Text size={16} color="primary" weight="maximum">
-            Or
-          </Text>
-        </BoxLine>
-        <BoxGoogle>
-          <ButtonBox></ButtonBox>
-          <BoxText>
-            <TextItem>
-              <Text size={16} color="dark" weight="medium">
-                Don't have an accout?
-              </Text>
-            </TextItem>
-            <ButtonItem>
-              <Button
-                buttoncolor="backgroundWhite"
-                onPress={() => navigation.navigate("SignUp")}
-              >
-                <Text size={16} color="primary" weight="medium">
-                  Register Now
-                </Text>
-              </Button>
-            </ButtonItem>
-          </BoxText>
-          <BoxErrorText>
-            {error && (
-              <Text size={18} color="dark" weight="maximum">
-                {error}
-              </Text>
-            )}
-          </BoxErrorText>
-        </BoxGoogle>
-      </ContainerGoogle>
-    </ContainerItems>
+      <AuthenticationMethods />
+     <AuthError error={error} />
+    </LoginForm>
   );
 }

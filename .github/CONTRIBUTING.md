@@ -12,12 +12,16 @@
       │   │   │    └── page.tsx # Lower case file name  ex: page.tsx
       │   │   │    └── styles.ts # Style name must follow pattern styles.ts
       │   │   │    └── services # specific page service use lowercase first letter  
-      │   │   │              └── EX: SignInService.ts 
+      │   │   │    │         └── EX: SignInService.ts 
+      │   │   │    └── components # Specific componet's pages
+      │   │   │             └── EX: SignInForm.tsx       
       │   │   └── page-example-two/ 
       │   │        └── page.tsx
       │   │        └── styles.module.ts
       │   │        └── services  
-      │   │                   └── EX: SignUpService.ts 
+      │   │        │         └── EX: SignUpService.ts 
+      │   │        └── components # Specific componet's pages
+      │   │                └── EX: SignIpForm.tsx         
       │   ├── routes/
       │   │   └── AppRoutes.tsx
       │   │   │
