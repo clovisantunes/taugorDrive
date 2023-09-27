@@ -1,7 +1,5 @@
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 
-
-
 interface SignUpProps {
     email: string;
     password: string;
@@ -14,7 +12,6 @@ export const handleRegister = async ({ email, password, setError, passwordConfir
         const auth = getAuth();
         createUserWithEmailAndPassword(auth ,email, password)
             .then(() => {
-                console.log('User account created & signed in!');
                 navigation.navigate('Home')
             })
             .catch(error => {
@@ -23,7 +20,6 @@ export const handleRegister = async ({ email, password, setError, passwordConfir
                 } else if (error.code === 'auth/invalid-email') {
                     setError('Esse endereço de e-mail é inválido!')
                 } else {
-                    console.log('Ocorreu um erro ao registrar sua conta. Por favor, tente novamente mais tarde.');
                     setError(error)
                 }
                 console.error(error);

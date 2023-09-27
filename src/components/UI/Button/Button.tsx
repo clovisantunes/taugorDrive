@@ -3,7 +3,7 @@ import { Wrapper } from "./styles"
 
 
 type ButtonProps = {
-    buttoncolor: "primary" | "secondary" | "backgroundWhite" | "dark" | "..."
+    buttoncolor: "primary" | "secondary" | "backgroundWhite" | "error" |"dark" | "..."
     text?: string;
     textColor?: 'white'| 'black' | 'primary'|  "...";
     onPress:  any;

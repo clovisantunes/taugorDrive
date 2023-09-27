@@ -13,6 +13,7 @@ export type StackPramsList = {
   SignUp: undefined;
   Home: {
     userEmail: string;
+    id: number;
   };
 }
 const Stack = createStackNavigator<StackPramsList>();

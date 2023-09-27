@@ -1,7 +1,7 @@
 import Button from "../../../../components/UI/Button/Button";
 import InputItem from "../../../../components/UI/Input/Input";
 import { SearchService } from "../../services/SearchItemService";
-import { Text } from "../../../../components/Text/Text";
+import { Feather } from '@expo/vector-icons';
 import {
   ButtonBox,
   ButtonSearch,
@@ -10,20 +10,23 @@ import {
   RenderItem,
   SearchBox,
   SearchItem,
+  ButtonItem,
+  ButtonDelete
 } from "./styles";
 import { useState } from "react";
 import Modal from "react-native-modal";
 import ModalItem from "../../../../components/Modal/ModalItem";
 
+
 type SearchProps = {
-  id: number;
+  id: string;
   name: string;
   
 };
 
 export default function SearchComponent({ id, name }: SearchProps) {
-  const { searchResults, searchQuery, setSearchQuery } = SearchService();
-  const [selectedItem, setSelectedItem] = useState(null);
+  const { searchResults, searchQuery, setSearchQuery, deleteItem } = SearchService();
+  const [selectedItem, setSelectedItem] = useState<SearchProps | null>(null);
   const [isModalVisible, setModalVisible] = useState(false);
 
 
@@ -31,7 +34,7 @@ export default function SearchComponent({ id, name }: SearchProps) {
     setSearchQuery(searchQuery.trim());
   };
 
-  const openModal = (item) => {
+  const openModal = (item: SearchProps) => {
     setSelectedItem(item);
     setModalVisible(true);
   };
@@ -59,7 +62,8 @@ export default function SearchComponent({ id, name }: SearchProps) {
       <ContainerItem>
       <RenderItem>
         {searchResults.map((item) => (
-          <ButtonBox>
+          <ButtonBox key={item.id}>
+            <ButtonItem>
             <Button
               key={item.id}
               buttoncolor="primary"
@@ -67,6 +71,12 @@ export default function SearchComponent({ id, name }: SearchProps) {
             >
               {item.name}
             </Button>
+            </ButtonItem>
+            <ButtonDelete>
+            <Button buttoncolor="error" onPress={() => deleteItem(item.id)}>
+              <Feather name="trash-2" size={24} color="white" />
+            </Button>
+            </ButtonDelete>
           </ButtonBox>
         ))}
       </RenderItem>

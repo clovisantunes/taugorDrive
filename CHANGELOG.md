@@ -30,6 +30,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Cdded firebase storage
 - Configured upload service and freeStorage
 - Added modal 
+- Adjusted modal styles
+- Initiated google signIn
 
 ### Fixed
 

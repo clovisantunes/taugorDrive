@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { getStorage, ref, listAll, getDownloadURL, getMetadata } from "firebase/storage";
+import {
+  getStorage,
+  ref,
+  listAll,
+  getDownloadURL,
+  getMetadata,
+  deleteObject,
+} from "firebase/storage";
 
 export type ItemData = {
   id: string;
@@ -15,7 +22,7 @@ export const SearchService = () => {
 
   useEffect(() => {
     const storage = getStorage();
-    const storageRef = ref(storage, "uploads"); 
+    const storageRef = ref(storage, "uploads");
 
     const searchItems = async () => {
       try {
@@ -50,5 +57,19 @@ export const SearchService = () => {
     searchItems();
   }, [searchQuery]);
 
-  return { searchResults, searchQuery, setSearchQuery };
+  const deleteItem = async (itemId: string) => {
+    try {
+      const storage = getStorage();
+      const itemRef = ref(storage, `uploads/${itemId}`);
+      await deleteObject(itemRef);
+
+      setSearchResults((prevResults) =>
+        prevResults.filter((result) => result.id !== itemId)
+      );
+    } catch (error) {
+      console.error("Error deleting item:", error);
+    }
+  };
+
+  return { searchResults, searchQuery, setSearchQuery, deleteItem };
 };

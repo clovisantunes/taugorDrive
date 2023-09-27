@@ -1,4 +1,3 @@
-import { useNavigation } from "@react-navigation/native";
 import {
     signInWithEmailAndPassword,
     getAuth
@@ -16,7 +15,6 @@ export const handleLogin = async ({email, password, setError, navigation}: login
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-            console.log('User account created & signed in!');
             navigation.navigate('Home', { userEmail: email })
         })
         .catch(error => {

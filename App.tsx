@@ -12,7 +12,6 @@ import {
 import {
   initializeAuth,
   getReactNativePersistence ,
-  getAuth
 } from 'firebase/auth';
 
 

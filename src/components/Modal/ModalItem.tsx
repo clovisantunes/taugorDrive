@@ -1,5 +1,6 @@
 import { Text } from '../Text/Text';
 import Button from '../UI/Button/Button';
+import { getDownloadURL, ref, getStorage } from 'firebase/storage';
 import { 
     Entypo, 
     Ionicons, 
@@ -12,7 +13,6 @@ import {
     TextDescription,
     TypeItem
 } from './styles';
-import { getDownloadURL, ref, getStorage } from 'firebase/storage';
 
 type ModalProps = {
     setModalVisible: boolean;
@@ -42,20 +42,6 @@ export default function ModalItem({ setModalVisible, closeModal, selectedItem }:
         return <Ionicons name="document" size={40} color="white" />
     };
 
-    const handleDownload = async () => {
-        try {
-          const storage = getStorage(); 
-          const fileRef = ref(storage, `uploads/${name}`); // Especifica o nome do arquivo no caminho
-      
-          const downloadURL = await getDownloadURL(fileRef);
-      
-          // Inicia o processo de download do arquivo
-          window.open(downloadURL, "_blank");
-        } catch (error) {
-          console.error("Erro ao obter URL de download:", error);
-        }
-      };
-
     return (
         <ModalView>
             <CloseModalBox>
@@ -77,9 +63,6 @@ export default function ModalItem({ setModalVisible, closeModal, selectedItem }:
                 <TypeItem>
                     {getIconForContentType(contentType)}
                 </TypeItem>
-                <Button buttoncolor='primary' onPress={handleDownload}>
-                    <Text color='white' size={16} weight='medium'>Baixar Arquivo</Text>
-                </Button>
         </ModalView>
     )
 }

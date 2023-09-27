@@ -1,25 +1,20 @@
 import { Text } from "../../components/Text/Text";
 import { StackPramsList } from "../../routes/AppRoutes";
 import { RouteProp } from "@react-navigation/native";
-import {
-  ContainerItems,
-  ButtonSearch,
-  Container,
-  InputContainer,
-  SearchItem,
-  TextContainer,
-  TextWelcome,
-} from "./styles";
-import InputItem from "../../components/UI/Input/Input";
-import Button from "../../components/UI/Button/Button";
 import UploadButton from "./components/UploadButton";
 import FreeStorage from "./components/FreeStorage";
 import SearchComponent from "./components/SearchComponents";
+import {
+  ContainerItems,
+  Container,
+  TextContainer,
+  TextWelcome,
+} from "./styles";
 
 type HomeRouteProp = RouteProp<StackPramsList, "Home">;
 interface Props {
   route: HomeRouteProp;
-  id: number
+  id: number;
 }
 
 export default function Home({ route, id }: Props) {

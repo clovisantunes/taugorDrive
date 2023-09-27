@@ -26,7 +26,20 @@ export const RenderItem = styled.ScrollView`
   margin-top: 8%;
 `
 export const ButtonBox = styled.View`
-  width: 80%;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 8%;
+`
+export const ButtonItem = styled.View`
+  width: 75%;
   height: 36px;
   margin-bottom: 4%;
+  flex-direction: row;
+`
+export const ButtonDelete = styled.View`
+  width: 16%;
+  height: 36px;
+  margin-bottom: 4%;
+  flex-direction: row;
 `

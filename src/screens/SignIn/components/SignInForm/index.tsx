@@ -3,6 +3,9 @@ import { Text } from "../../../../components/Text/Text";
 import Button from "../../../../components/UI/Button/Button";
 import InputItem from "../../../../components/UI/Input/Input";
 import { useNavigation } from "@react-navigation/native";
+import AuthenticationMethods from "../../../../components/AuthenticationMethods/AuthenticationMethods";
+import AuthError from "../../../../components/AuthenticationError/AuthError";
+import { handleLogin } from "../../services/SignInService";
 import {
   ButtonBox,
   LoginForm,
@@ -10,8 +13,7 @@ import {
   FourgoutPassBox,
   Inputbox,
 } from "./styles";
-import AuthenticationMethods from "../../../../components/AuthenticationMethods/AuthenticationMethods";
-import AuthError from "../../../../components/AuthenticationError/AuthError";
+import GoogleSignIn from "../GoogleSignIn";
 
 export default function LoginComponent() {
   const [email, setEmail] = useState("");
@@ -20,8 +22,7 @@ export default function LoginComponent() {
   const [error, setError] = useState("");
 
   const handleLoginClick = () => {
-    /*handleLogin({ email, password, setError, navigation });*/
-    navigation.navigate("Home", { userEmail: email });
+    handleLogin({ email, password, setError, navigation });
   };
 
   return (
@@ -62,6 +63,7 @@ export default function LoginComponent() {
       </ButtonBox>
       <AuthenticationMethods />
      <AuthError error={error} />
+     <GoogleSignIn />
     </LoginForm>
   );
 }
