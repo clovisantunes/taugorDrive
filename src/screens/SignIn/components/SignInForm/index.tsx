@@ -13,7 +13,6 @@ import {
   FourgoutPassBox,
   Inputbox,
 } from "./styles";
-import GoogleSignIn from "../GoogleSignIn";
 
 export default function LoginComponent() {
   const [email, setEmail] = useState("");
@@ -63,7 +62,6 @@ export default function LoginComponent() {
       </ButtonBox>
       <AuthenticationMethods />
      <AuthError error={error} />
-     <GoogleSignIn />
     </LoginForm>
   );
 }

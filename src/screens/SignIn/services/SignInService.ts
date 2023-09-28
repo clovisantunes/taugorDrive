@@ -2,14 +2,12 @@ import {
     signInWithEmailAndPassword,
     getAuth
 } from "firebase/auth";
-
 interface loginProps {
     email: string;
     password: string;
     setError?: (error: string) => void;
     navigation: any;
 }
-
 export const handleLogin = async ({email, password, setError, navigation}: loginProps) => {
     
     const auth = getAuth();
