@@ -21,7 +21,7 @@ To run the project, follow the steps below:
 
 2. Open the android studio.
 1. Open your terminal application.
-3. Run the command: `npm expo start --android`.
+3. Run the command: `npx expo start --android`.
 
 ## Contributing
 See [contributing guidelines](.github/CONTRIBUTING.md).
